@@ -25,4 +25,65 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
+on fs
+    chmod 0664 /dev/ion
+    chown system system /dev/ion
+    export LD_LIBRARY_PATH /sbin:/vendor/lib64:/vendor/lib64/hw
+    install_keyring
+
+    setprop crypto.ready 1
+
+# separate copy needed to use /sbin/linker64 instead of /system/bin/linker64
+
+service prepdecrypt /sbin/prepdecrypt.sh
+    oneshot
+    disabled
+    user root
+    group root
+    seclabel u:r:recovery:s0
+
+service hwservicemanager /sbin/hwservicemanager
+    user root
+    group root
+    disabled
+    onrestart setprop hwservicemanager.ready false
+    seclabel u:r:recovery:s0
+
+service boot-1-0 /sbin/android.hardware.boot@1.0-service
+    user root
+    group root
+    disabled
+    seclabel u:r:recovery:s0
+
+service servicemanager /sbin/servicemanager
+    user root
+    group root readproc
+    disabled
+    seclabel u:r:recovery:s0
+
+service keystore_auth /sbin/keystore_auth
+    oneshot
+    user system
+    group root
+    disabled
+    seclabel u:r:recovery:s0
+
+# keystore is started and stopped on demand by TWRP
+service keystore /sbin/keystore /tmp/misc/keystore
+    user root
+    group root drmrpc readproc
+    disabled
+    seclabel u:r:recovery:s0
+
+on property:crypto.ready=1
+    start prepdecrypt
+    start hwservicemanager
+    start servicemanager
+
+on property:crypto.ready=0
+    stop keymaster-3-0
+    stop hwservicemanager
+    stop keystore
+    stop servicemanager
+
 
