@@ -62,4 +62,4 @@ PRODUCT_DEVICE := kane
 PRODUCT_NAME := omni_kane
 PRODUCT_BRAND := motorola
 PRODUCT_MODEL := motorola one vision
-PRODUCT_MANUFACTURER := Motorola
+PRODUCT_MANUFACTURER := motorola
