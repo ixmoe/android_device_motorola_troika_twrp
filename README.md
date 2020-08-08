@@ -1,4 +1,4 @@
-# TWRP Device configuration for Motorola Moto One Vision
+# TWRP Device configuration for Motorola One Action
 
 ## Device specifications
 
@@ -7,16 +7,16 @@ Basic   | Spec Sheet
 CPU     | Octa-core 2.2 GHz
 CHIPSET | Samsung Exynos 9609
 GPU     | Mali G72 MP3
-Memory  | 4 / 6GB
+Memory  | 4GB
 Shipped Android Version | 9.0 (Pie)
 Storage | 128GB
 Battery | 3500 mAh
-Dimensions | 160.1 x 71.2 x 8.7 mm
+Dimensions | 160.1 x 71.2 x 9.2 mm
 Display | 1080 x 2520 pixels, 6.3" LTPS IPS LCD
-Rear Camera  | 48 MP (f/1.7) + 5 MP (f/2.2), (PDAF, dual pixel)
-Front Camera | 25 MP (f/2.0)
+Rear Camera  | 12 MP (f/1.8) + 16 MP (f/2.2) + 5 MP (f/2.2)
+Front Camera | 12 MP (f/2.0)
 
-![Device Picture](https://cdn2.gsmarena.com/vv/pics/motorola/motorola-one-vision-0.jpg)
+![Device Picture](https://fdn2.gsmarena.com/vv/pics/motorola/motorola-one-action-aqua-teal-1.jpg)
 
 ### Kernel Source
 Check here: https://github.com/ixmoe/android_kernel_motorola_universal9610
@@ -25,13 +25,13 @@ Check here: https://github.com/ixmoe/android_kernel_motorola_universal9610
 
 ```sh
 . build/envsetup.sh
-lunch omni_kane-eng
+lunch omni_troika-eng
 make -j4 recoveryimage
 ```
 ### Copyright
  ```
   /*
-  *  Copyright (C) 2013-17 The OmniROM Project
+  *  Copyright (C) 2013-20 The OmniROM Project
   *
   * This program is free software: you can redistribute it and/or modify
   * it under the terms of the GNU General Public License as published by

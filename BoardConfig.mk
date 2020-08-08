@@ -23,7 +23,7 @@
 # *not* include it on all devices, so it is safe even with hardware-specific
 # components.
 
-PLATFORM_PATH := device/motorola/kane
+PLATFORM_PATH := device/motorola/troika
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := exynos9610
