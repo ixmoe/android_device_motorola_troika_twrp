@@ -23,6 +23,7 @@
 # *not* include it on all devices, so it is safe even with hardware-specific
 # components.
 
+ALLOW_MISSING_DEPENDENCIES=true
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := exynos9610
@@ -93,7 +94,19 @@ TARGET_INIT_VENDOR_LIB := libinit_troika
 TARGET_RECOVERY_DEVICE_MODULES := libinit_troika
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc/
 
-# A/B device flags
+# Use mke2fs to create ext4 images
+TARGET_USES_MKE2FS := true
+
+# A/B updater updatable partitions list. Keep in sync with the partition list
+# with "_a" and "_b" variants in the device. Note that the vendor can add more
+# more partitions to this list for the bootloader and radio.
+AB_OTA_PARTITIONS += \
+    boot \
+    system \
+    vendor \
+    vbmeta \
+    dtbo 
+
 TARGET_NO_KERNEL := false
 #TARGET_NO_RECOVERY := true
 BOARD_USES_RECOVERY_AS_BOOT := true
@@ -125,6 +138,7 @@ TW_USE_TOOLBOX := true
 TW_EXCLUDE_TWRPAPP := true
 USE_RECOVERY_INSTALLER := true
 RECOVERY_INSTALLER_PATH := device/motorola/troika/installer
+TW_NO_HAPTICS := true
 
 # Installer
 TW_INCLUDE_REPACKTOOLS := true
