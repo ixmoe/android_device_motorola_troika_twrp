@@ -23,7 +23,6 @@
 # *not* include it on all devices, so it is safe even with hardware-specific
 # components.
 
-PLATFORM_PATH := device/motorola/troika
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := exynos9610
@@ -86,13 +85,16 @@ TARGET_RECOVERY_PIXEL_FORMAT := "ABGR_8888"
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
+PRODUCT_SOONG_NAMESPACES += device/motorola/troika
+TARGET_RECOVERY_DEVICE_MODULES += android.hardware.boot@1.0-impl.exynos
+
 # A/B device flags
 TARGET_NO_KERNEL := false
 #TARGET_NO_RECOVERY := true
 BOARD_USES_RECOVERY_AS_BOOT := true
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 AB_OTA_UPDATER := true
-#USE_COMMON_BOOTCTRL := true
+USE_COMMON_BOOTCTRL := true
 
 # Crypto
 TW_INCLUDE_CRYPTO := true
