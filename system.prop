@@ -1,1 +1,4 @@
-ro.display.series=moto one action
+ro.display.series=Moto One
+ro.product.board=exynos9610
+ro.board.platform=exynos9610
+ro.build.version.release=9
