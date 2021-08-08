@@ -89,6 +89,10 @@ TARGET_USERIMAGES_USE_F2FS := true
 PRODUCT_SOONG_NAMESPACES += device/motorola/troika
 TARGET_RECOVERY_DEVICE_MODULES += android.hardware.boot@1.0-impl.exynos
 
+# Partitions (listed in the file) to be wiped under recovery.
+TARGET_RECOVERY_WIPE := device/motorola/troika/recovery.wipe
+TARGET_RECOVERY_FSTAB := device/motorola/troika/recovery.fstab
+
 #Init
 TARGET_INIT_VENDOR_LIB := libinit_troika
 TARGET_RECOVERY_DEVICE_MODULES := libinit_troika
