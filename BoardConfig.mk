@@ -88,6 +88,11 @@ TARGET_USERIMAGES_USE_F2FS := true
 PRODUCT_SOONG_NAMESPACES += device/motorola/troika
 TARGET_RECOVERY_DEVICE_MODULES += android.hardware.boot@1.0-impl.exynos
 
+#Init
+TARGET_INIT_VENDOR_LIB := libinit_troika
+TARGET_RECOVERY_DEVICE_MODULES := libinit_troika
+TARGET_PLATFORM_DEVICE_BASE := /devices/soc/
+
 # A/B device flags
 TARGET_NO_KERNEL := false
 #TARGET_NO_RECOVERY := true
