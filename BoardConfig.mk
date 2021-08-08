@@ -118,6 +118,8 @@ TW_EXCLUDE_DEFAULT_USB_INIT := true
 TARGET_RECOVERY_DEVICE_MODULES += android.hardware.boot@1.0
 TW_USE_TOOLBOX := true
 TW_EXCLUDE_TWRPAPP := true
+USE_RECOVERY_INSTALLER := true
+RECOVERY_INSTALLER_PATH := device/motorola/troika/installer
 
 # Installer
 TW_INCLUDE_REPACKTOOLS := true
